@@ -55,6 +55,9 @@
       </p>
     </div>
   </div>
+  <div *ngIf = "this.status === 'failed' ">
+    <p class="font-medium text-red-500 text-xs mt-1 ml-1"> The data is invalid.</p>
+  </div>
   <div>
     <app-btn
       typeBtn="submit"
