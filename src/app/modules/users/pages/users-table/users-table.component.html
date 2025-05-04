@@ -24,27 +24,38 @@
         <td cdk-cell class="py-4 px-6" *cdkCellDef="let row">{{ row.id }}</td>
       </ng-container>
 
-      <!-- Avatar Column -->
-      <ng-container cdkColumnDef="avatar">
-        <th cdk-header-cell class="py-3 px-6" *cdkHeaderCellDef>Avatar</th>
-        <td cdk-cell class="py-4 px-6" *cdkCellDef="let row">
-          <img class="w-20" [src]="row.avatar" alt="" />
-        </td>
-      </ng-container>
+
+    
 
       <!-- Name Column -->
       <ng-container cdkColumnDef="name">
-        <th cdk-header-cell class="py-3 px-6" *cdkHeaderCellDef>Name</th>
-        <td cdk-cell class="py-4 px-6" *cdkCellDef="let row">{{ row.name }}</td>
+        <th cdk-header-cell class="py-3 px-6" *cdkHeaderCellDef>Nombre</th>
+        <td cdk-cell *cdkCellDef="let row">
+          <ng-container *ngIf="editingRows[row.id]; else nombreTexto">
+        <input [(ngModel)]="row.nombre" class="border p-1 rounded w-full" />
+      </ng-container>
+      <ng-template #nombreTexto>{{ row.nombre }}</ng-template>
       </ng-container>
 
+      <ng-container cdkColumnDef="apellido">
+        <th cdk-header-cell class="py-3 px-6" *cdkHeaderCellDef>Apellido</th>
+        <td cdk-cell class="py-4 px-6" *cdkCellDef="let row">
+          <ng-container *ngIf="editingRows[row.id]; else apellidoTexto">
+            <input [(ngModel)]="row.nombre" class="border p-1 rounded w-full" />
+          </ng-container>
+          <ng-template #apellidoTexto>{{ row.nombre }}</ng-template>
+      </ng-container>
       <!-- Email Column -->
       <ng-container cdkColumnDef="email">
         <th cdk-header-cell class="py-3 px-6" *cdkHeaderCellDef>Email</th>
         <td cdk-cell class="py-4 px-6" *cdkCellDef="let row">
           {{ row.email }}
+          <button type="button"
+          (click)="activarEdicion(row.id)"class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Edit</button>
         </td>
+    
       </ng-container>
+      
     </table>
   </div>
 </div>

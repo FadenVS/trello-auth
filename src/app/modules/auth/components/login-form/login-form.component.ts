@@ -11,7 +11,7 @@ export class LoginFormComponent {
 
   form = this.formBuilder.nonNullable.group({
     email: ['', [Validators.email, Validators.required]],
-    password: ['', [ Validators.required, Validators.minLength(6)]],
+    contrasena: ['', [ Validators.required, Validators.minLength(6)]],
   });
   faPen = faPen;
   faEye = faEye;
@@ -28,11 +28,12 @@ export class LoginFormComponent {
   doLogin() {
     if (this.form.valid) {
       this.status = 'loading';
-      const { email, password } = this.form.getRawValue();
+      const { email, contrasena } = this.form.getRawValue();
       // TODO
-      this.authService.login(email, password).subscribe({ next: () =>{ 
+      this.authService.login(email, contrasena).subscribe({ next: () =>{ 
         this.status = 'success'; 
         this.router.navigate(['/app']);
+        
         },
         
         error: () => {

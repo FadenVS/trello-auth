@@ -1,0 +1,1570 @@
+{
+"openapi": "3.0.1",
+"info": {
+  "title": "ControlFactura API",
+  "version": "v1"
+},
+"paths": {
+  "/api/Deuda/por-inquilino/{idInquilino}": {
+    "get": {
+      "tags": [
+        "Deuda"
+      ],
+      "parameters": [
+        {
+          "name": "idInquilino",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Deuda": {
+    "post": {
+      "tags": [
+        "Deuda"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DeudaCrearDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DeudaCrearDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/DeudaCrearDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Deuda/{id}/estado": {
+    "put": {
+      "tags": [
+        "Deuda"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Deuda/{id}": {
+    "delete": {
+      "tags": [
+        "Deuda"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Email/enviar": {
+    "post": {
+      "tags": [
+        "Email"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/EmailDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/EmailDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/EmailDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Factura/por-inmueble/{idInmueble}": {
+    "get": {
+      "tags": [
+        "Factura"
+      ],
+      "parameters": [
+        {
+          "name": "idInmueble",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Factura": {
+    "post": {
+      "tags": [
+        "Factura"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/FacturaCrearDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/FacturaCrearDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/FacturaCrearDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Factura/{id}": {
+    "put": {
+      "tags": [
+        "Factura"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/FacturaCrearDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/FacturaCrearDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/FacturaCrearDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Factura"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Inmueble": {
+    "get": {
+      "tags": [
+        "Inmueble"
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Inmueble"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InmuebleCrearDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InmuebleCrearDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/InmuebleCrearDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Inmueble/{id}": {
+    "get": {
+      "tags": [
+        "Inmueble"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Inmueble"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InmuebleEditarDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InmuebleEditarDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/InmuebleEditarDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Inmueble"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/InmuebleInquilino/por-inmueble/{idInmueble}": {
+    "get": {
+      "tags": [
+        "InmuebleInquilino"
+      ],
+      "parameters": [
+        {
+          "name": "idInmueble",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/InmuebleInquilino": {
+    "post": {
+      "tags": [
+        "InmuebleInquilino"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InmuebleInquilinoDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InmuebleInquilinoDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/InmuebleInquilinoDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "InmuebleInquilino"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InmuebleInquilinoClaveDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InmuebleInquilinoClaveDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/InmuebleInquilinoClaveDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Inquilino": {
+    "get": {
+      "tags": [
+        "Inquilino"
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Inquilino"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InquilinoCrearDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InquilinoCrearDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/InquilinoCrearDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Inquilino/{id}": {
+    "get": {
+      "tags": [
+        "Inquilino"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Inquilino"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InquilinoEditarDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InquilinoEditarDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/InquilinoEditarDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Inquilino"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Pago": {
+    "post": {
+      "tags": [
+        "Pago"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PagoCrearDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PagoCrearDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/PagoCrearDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Pago/por-inquilino/{idInquilino}": {
+    "get": {
+      "tags": [
+        "Pago"
+      ],
+      "parameters": [
+        {
+          "name": "idInquilino",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Pago/{id}": {
+    "delete": {
+      "tags": [
+        "Pago"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Permiso/por-inquilino/{idInquilino}": {
+    "get": {
+      "tags": [
+        "Permiso"
+      ],
+      "parameters": [
+        {
+          "name": "idInquilino",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Permiso": {
+    "post": {
+      "tags": [
+        "Permiso"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PermisoCrearDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PermisoCrearDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/PermisoCrearDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Permiso/{id}": {
+    "put": {
+      "tags": [
+        "Permiso"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PermisoEditarDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PermisoEditarDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/PermisoEditarDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Permiso"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Usuario/registro": {
+    "post": {
+      "tags": [
+        "Usuario"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsuarioRegistroDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsuarioRegistroDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsuarioRegistroDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Usuario/login": {
+    "post": {
+      "tags": [
+        "Usuario"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsuarioLoginDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsuarioLoginDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsuarioLoginDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Usuario/perfil": {
+    "get": {
+      "tags": [
+        "Usuario"
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Usuario/editar": {
+    "put": {
+      "tags": [
+        "Usuario"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsuarioEditarDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsuarioEditarDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsuarioEditarDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Usuario/password": {
+    "put": {
+      "tags": [
+        "Usuario"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsuarioCambiarPasswordDto"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsuarioCambiarPasswordDto"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsuarioCambiarPasswordDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Usuario": {
+    "get": {
+      "tags": [
+        "Usuario"
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Usuario/{id}": {
+    "delete": {
+      "tags": [
+        "Usuario"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/WeatherForecast": {
+    "get": {
+      "tags": [
+        "WeatherForecast"
+      ],
+      "operationId": "GetWeatherForecast",
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WeatherForecast"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WeatherForecast"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WeatherForecast"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/api/Whatsapp/login": {
+    "get": {
+      "tags": [
+        "Whatsapp"
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Whatsapp/logout": {
+    "get": {
+      "tags": [
+        "Whatsapp"
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        }
+      }
+    }
+  },
+  "/api/Whatsapp/enviar/mensaje": {
+    "post": {
+      "tags": [
+        "Whatsapp"
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Whatsapp"
+            }
+          },
+          "text/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Whatsapp"
+            }
+          },
+          "application/*+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Whatsapp"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "text/plain": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiResponse"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiResponse"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiResponse"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+},
+"components": {
+  "schemas": {
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "codigo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "mensaje": {
+          "type": "string",
+          "nullable": true
+        },
+        "data": {
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "DeudaCrearDto": {
+      "type": "object",
+      "properties": {
+        "idFactura": {
+          "type": "integer",
+          "format": "int32",
+          "nullable": true
+        },
+        "idInquilino": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "monto": {
+          "type": "number",
+          "format": "double"
+        },
+        "fechaNotificacion": {
+          "type": "string",
+          "format": "date-time",
+          "nullable": true
+        },
+        "fechaVencimiento": {
+          "type": "string",
+          "format": "date-time",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "EmailAdjuntoDto": {
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "nullable": true
+        },
+        "contenidoBase64": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "EmailDto": {
+      "type": "object",
+      "properties": {
+        "para": {
+          "type": "string",
+          "nullable": true
+        },
+        "asunto": {
+          "type": "string",
+          "nullable": true
+        },
+        "titulo": {
+          "type": "string",
+          "nullable": true
+        },
+        "mensaje": {
+          "type": "string",
+          "nullable": true
+        },
+        "adjuntos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/EmailAdjuntoDto"
+          },
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "FacturaCrearDto": {
+      "type": "object",
+      "properties": {
+        "idInmueble": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "monto": {
+          "type": "number",
+          "format": "double"
+        },
+        "esCompartida": {
+          "type": "boolean"
+        },
+        "fechaVencimiento": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "nombreArchivo": {
+          "type": "string",
+          "nullable": true
+        },
+        "base64Archivo": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "InmuebleCrearDto": {
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "nullable": true
+        },
+        "direccion": {
+          "type": "string",
+          "nullable": true
+        },
+        "ciudad": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "InmuebleEditarDto": {
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "nullable": true
+        },
+        "direccion": {
+          "type": "string",
+          "nullable": true
+        },
+        "ciudad": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "InmuebleInquilinoClaveDto": {
+      "type": "object",
+      "properties": {
+        "idInmueble": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "idInquilino": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fechaIngreso": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "InmuebleInquilinoDto": {
+      "type": "object",
+      "properties": {
+        "idInmueble": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "idInquilino": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fechaIngreso": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "fechaSalida": {
+          "type": "string",
+          "format": "date-time",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "InquilinoCrearDto": {
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "nullable": true
+        },
+        "apellido": {
+          "type": "string",
+          "nullable": true
+        },
+        "email": {
+          "type": "string",
+          "nullable": true
+        },
+        "celular": {
+          "type": "string",
+          "nullable": true
+        },
+        "telefono": {
+          "type": "string",
+          "nullable": true
+        },
+        "numeroPasaporte": {
+          "type": "string",
+          "nullable": true
+        },
+        "nacionalidad": {
+          "type": "string",
+          "nullable": true
+        },
+        "fechaLlegada": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "InquilinoEditarDto": {
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "nullable": true
+        },
+        "apellido": {
+          "type": "string",
+          "nullable": true
+        },
+        "email": {
+          "type": "string",
+          "nullable": true
+        },
+        "celular": {
+          "type": "string",
+          "nullable": true
+        },
+        "telefono": {
+          "type": "string",
+          "nullable": true
+        },
+        "numeroPasaporte": {
+          "type": "string",
+          "nullable": true
+        },
+        "nacionalidad": {
+          "type": "string",
+          "nullable": true
+        },
+        "fechaLlegada": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PagoCrearDto": {
+      "type": "object",
+      "properties": {
+        "idDeuda": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "idInquilino": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fechaPago": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "nombreArchivo": {
+          "type": "string",
+          "nullable": true
+        },
+        "base64Archivo": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "PermisoCrearDto": {
+      "type": "object",
+      "properties": {
+        "idInquilino": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "motivo": {
+          "type": "string",
+          "nullable": true
+        },
+        "fechaInicio": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "fechaFin": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "fechaNotificacion": {
+          "type": "string",
+          "format": "date-time",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "PermisoEditarDto": {
+      "type": "object",
+      "properties": {
+        "motivo": {
+          "type": "string",
+          "nullable": true
+        },
+        "fechaInicio": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "fechaFin": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "fechaNotificacion": {
+          "type": "string",
+          "format": "date-time",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "UsuarioCambiarPasswordDto": {
+      "type": "object",
+      "properties": {
+        "contrasenaActual": {
+          "type": "string",
+          "nullable": true
+        },
+        "nuevaContrasena": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "UsuarioEditarDto": {
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "nullable": true
+        },
+        "apellido": {
+          "type": "string",
+          "nullable": true
+        },
+        "email": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "UsuarioLoginDto": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "nullable": true
+        },
+        "contrasena": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "UsuarioRegistroDto": {
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "nullable": true
+        },
+        "apellido": {
+          "type": "string",
+          "nullable": true
+        },
+        "email": {
+          "type": "string",
+          "nullable": true
+        },
+        "contrasena": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "WeatherForecast": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "temperatureC": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "temperatureF": {
+          "type": "integer",
+          "format": "int32",
+          "readOnly": true
+        },
+        "summary": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "Whatsapp": {
+      "type": "object",
+      "properties": {
+        "numero": {
+          "type": "string",
+          "nullable": true
+        },
+        "mensaje": {
+          "type": "string",
+          "nullable": true
+        },
+        "tipo": {
+          "type": "string",
+          "nullable": true
+        },
+        "nombreArchivo": {
+          "type": "string",
+          "nullable": true
+        },
+        "urlArchivo": {
+          "type": "string",
+          "nullable": true
+        },
+        "base64Archivo": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "securitySchemes": {
+    "Bearer": {
+      "type": "apiKey",
+      "description": "JWT Authorization header usando el esquema Bearer.\r\n\r\nEjemplo: 'Bearer {token}'",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+},
+"security": [
+  {
+    "Bearer": [ ]
+  }
+]
+}

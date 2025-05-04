@@ -4,6 +4,8 @@ import { CdkTableModule } from '@angular/cdk/table';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersTableComponent } from './pages/users-table/users-table.component';
+import { ActionButtonsComponent } from 'src/app/shared/action-buttons/action-buttons.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +15,10 @@ import { UsersTableComponent } from './pages/users-table/users-table.component';
   imports: [
     CommonModule,
     UsersRoutingModule,
-    CdkTableModule
+    CdkTableModule,
+    FormsModule
+   
+    
   ]
 })
 export class UsersModule { }
